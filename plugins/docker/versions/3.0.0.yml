@@ -5,13 +5,12 @@ minGlideVersion: 3.0.0
 # GitHub release URL (update when release is published)
 releaseURL: https://github.com/glide-cli/glide-plugin-docker/releases/tag/v3.0.0
 
-# Checksums for each platform (update with actual values after release)
 checksums:
-  darwin-amd64: sha256:pending
-  darwin-arm64: sha256:pending
-  linux-amd64: sha256:pending
-  linux-arm64: sha256:pending
-  windows-amd64: sha256:pending
+  darwin-amd64: sha256:cf73ca7c6c5732d501c381d9fa900f4ac4450d02df0e7f807cb165aedb2d3351
+  darwin-arm64: sha256:7290cc80a74660e0969a12d95d2edb1f335a95cd76fc5ecb20f2cb5803148ff4
+  linux-amd64: sha256:89bb0d07604363704d682c5cd2eb030227d57c25686759c87f4ba164af5a42f9
+  linux-arm64: sha256:8a58005db9e4354d79007d0c5e4185c15062b86f61e31a58d89572e5d041b450
+  windows-amd64: sha256:1d09a8e3422ee279f9707b0eab6036fabc759903a70462918acd6db7fe115370
 
 changelog: |
   ### Breaking Changes
