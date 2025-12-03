@@ -1,0 +1,40 @@
+version: 3.0.0
+releaseDate: 2025-12-01T00:00:00Z
+minGlideVersion: 3.0.0
+
+# Built-in plugin - no separate download required
+type: builtin
+bundledWith: glide@3.0.0
+
+changelog: |
+  ### Features
+  - Node.js project detection via package.json
+  - Automatic package manager detection (npm, yarn, pnpm, bun)
+  - Framework detection (React, Vue, Angular, Next.js, Nuxt, Express, NestJS)
+  - Workspace/monorepo support
+  - TypeScript project detection
+  - Auto-import of package.json scripts as commands
+
+  ### Package Manager Support
+  - npm (default)
+  - yarn (detected via yarn.lock)
+  - pnpm (detected via pnpm-lock.yaml)
+  - bun (detected via bun.lockb)
+
+commands:
+  - name: install
+    description: Install dependencies
+  - name: test
+    description: Run tests
+  - name: build
+    description: Build the project
+  - name: dev
+    description: Start development server
+  - name: start
+    description: Start the application
+  - name: add
+    description: Add a dependency
+  - name: remove
+    description: Remove a dependency
+  - name: update
+    description: Update dependencies

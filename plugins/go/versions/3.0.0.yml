@@ -1,0 +1,47 @@
+version: 3.0.0
+releaseDate: 2025-12-01T00:00:00Z
+minGlideVersion: 3.0.0
+
+# Built-in plugin - no separate download required
+type: builtin
+bundledWith: glide@3.0.0
+
+changelog: |
+  ### Features
+  - Go project detection via go.mod
+  - Go workspace support (go.work)
+  - Automatic version detection from go.mod
+  - Module name extraction
+
+  ### Commands
+  - Build, test, and run commands
+  - Code formatting (go fmt)
+  - Static analysis (go vet)
+  - Module management (mod:tidy, mod:download, mod:vendor)
+  - Code generation (go generate)
+
+commands:
+  - name: build
+    description: Build Go project
+  - name: test
+    description: Run Go tests
+  - name: test:v
+    description: Run Go tests with verbose output
+  - name: test:race
+    description: Run Go tests with race detector
+  - name: test:cover
+    description: Run Go tests with coverage
+  - name: run
+    description: Run Go application
+  - name: fmt
+    description: Format Go code
+  - name: vet
+    description: Examine Go source code
+  - name: mod:tidy
+    description: Add missing and remove unused modules
+  - name: mod:download
+    description: Download modules to local cache
+  - name: mod:vendor
+    description: Make vendored copy of dependencies
+  - name: generate
+    description: Generate Go files

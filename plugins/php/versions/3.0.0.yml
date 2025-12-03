@@ -1,0 +1,58 @@
+version: 3.0.0
+releaseDate: 2025-12-01T00:00:00Z
+minGlideVersion: 3.0.0
+
+# Built-in plugin - no separate download required
+type: builtin
+bundledWith: glide@3.0.0
+
+changelog: |
+  ### Features
+  - PHP project detection via composer.json
+  - PHP version requirement detection
+  - Framework detection with framework-specific commands
+  - Testing tool detection (PHPUnit, Pest, Codeception, Behat)
+  - Code quality tool detection (PHPStan, Psalm, PHP CS Fixer, PHPCS)
+  - Auto-import of composer scripts as commands
+
+  ### Supported Frameworks
+  - Laravel (artisan commands)
+  - Symfony (console commands)
+  - WordPress (WP-CLI commands)
+  - Drupal (Drush commands)
+  - CodeIgniter (spark commands)
+  - Slim, Lumen, CakePHP, Yii, Laminas
+
+commands:
+  - name: install
+    description: Install dependencies
+  - name: update
+    description: Update dependencies
+  - name: autoload
+    description: Regenerate autoloader
+  - name: test
+    description: Run tests
+  - name: test:unit
+    description: Run PHPUnit tests
+  - name: lint
+    description: Lint PHP code
+  - name: analyze
+    description: Run static analysis
+  - name: format
+    description: Format PHP code
+  - name: require
+    description: Add a dependency
+  - name: require:dev
+    description: Add a dev dependency
+  - name: remove
+    description: Remove a dependency
+  - name: outdated
+    description: Show outdated packages
+  - name: show
+    description: Show installed packages
+  - name: serve
+    description: Start development server (Laravel/Symfony)
+  - name: migrate
+    description: Run database migrations (Laravel)
+  - name: tinker
+    description: Open REPL (Laravel)

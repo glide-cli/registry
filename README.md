@@ -160,12 +160,21 @@ See [Plugin Development Guide](https://github.com/glide-cli/glide/blob/main/PLUG
 
 ## Official Plugins
 
+### External Plugins
+These plugins are distributed as separate binaries and installed via `glide plugin install`.
+
 | Plugin | Description | Version |
 |--------|-------------|---------|
 | [docker](plugins/docker) | Docker and Docker Compose management | 3.0.0 |
-| go | Go version and module management | Coming soon |
-| node | Node.js and npm/yarn management | Coming soon |
-| php | PHP and Composer management | Coming soon |
+
+### Built-in Plugins
+These plugins ship with Glide core and are automatically available.
+
+| Plugin | Description | Version |
+|--------|-------------|---------|
+| [go](plugins/go) | Go project detection with build, test, and module commands | 3.0.0 |
+| [node](plugins/node) | Node.js with npm/yarn/pnpm/bun and framework detection | 3.0.0 |
+| [php](plugins/php) | PHP with Composer, Laravel, Symfony, and framework commands | 3.0.0 |
 
 ## License
 
