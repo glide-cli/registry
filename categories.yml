@@ -1,0 +1,43 @@
+# Glide Plugin Registry - Categories
+# Each category groups related plugins for discovery
+
+categories:
+  - id: docker
+    name: Docker & Containers
+    description: Container orchestration, Docker Compose, and containerized development workflows
+    icon: container
+
+  - id: languages
+    name: Languages & Runtimes
+    description: Language-specific tooling, version management, and runtime environments
+    icon: code
+
+  - id: databases
+    name: Databases
+    description: Database management, migrations, and data tooling
+    icon: database
+
+  - id: testing
+    name: Testing & Quality
+    description: Test runners, code quality tools, and CI/CD integration
+    icon: check-circle
+
+  - id: cloud
+    name: Cloud & Infrastructure
+    description: Cloud provider CLIs, infrastructure as code, and deployment tools
+    icon: cloud
+
+  - id: security
+    name: Security
+    description: Security scanning, secrets management, and vulnerability detection
+    icon: shield
+
+  - id: monitoring
+    name: Monitoring & Observability
+    description: Logging, metrics, tracing, and application monitoring
+    icon: activity
+
+  - id: utilities
+    name: Utilities
+    description: General-purpose development utilities and productivity tools
+    icon: tool

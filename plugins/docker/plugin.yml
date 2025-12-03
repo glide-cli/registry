@@ -1,0 +1,22 @@
+name: docker
+description: Complete Docker and Docker Compose management for development workflows
+author: glide-cli
+homepage: https://github.com/glide-cli/glide-plugin-docker
+repository: https://github.com/glide-cli/glide-plugin-docker
+license: MIT
+
+categories:
+  - docker
+  - containers
+
+tags:
+  - docker
+  - compose
+  - containers
+  - orchestration
+  - development
+  - services
+
+# Current versions
+latest: 3.0.0
+stable: 3.0.0
