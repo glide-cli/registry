@@ -1,0 +1,92 @@
+name: Validate Registry
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Plugin Metadata
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        uses: mikefarah/yq@v4
+
+      - name: Run validation
+        run: ./scripts/validate.sh
+
+      - name: Validate URLs (PR only)
+        if: github.event_name == 'pull_request'
+        run: VALIDATE_URLS=true ./scripts/validate.sh
+        continue-on-error: true
+
+  yaml-lint:
+    name: YAML Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Lint YAML files
+        run: |
+          yamllint -d "{extends: relaxed, rules: {line-length: {max: 200}}}" \
+            categories.yml \
+            plugins/*/plugin.yml \
+            plugins/*/versions/*.yml
+
+  check-changed-plugins:
+    name: Summarize Changes
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install yq
+        uses: mikefarah/yq@v4
+
+      - name: Identify changed plugins
+        id: changes
+        run: |
+          echo "## Changed Plugins" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'plugins/**')
+
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "No plugin changes detected." >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+
+          # Extract unique plugin names
+          PLUGINS=$(echo "$CHANGED_FILES" | grep -oP 'plugins/\K[^/]+' | sort -u)
+
+          for plugin in $PLUGINS; do
+            echo "### $plugin" >> $GITHUB_STEP_SUMMARY
+
+            if [[ -f "plugins/$plugin/plugin.yml" ]]; then
+              DESC=$(yq -r '.description // "No description"' "plugins/$plugin/plugin.yml")
+              LATEST=$(yq -r '.latest // "?"' "plugins/$plugin/plugin.yml")
+              REPO=$(yq -r '.repository // ""' "plugins/$plugin/plugin.yml")
+
+              echo "- **Description:** $DESC" >> $GITHUB_STEP_SUMMARY
+              echo "- **Latest Version:** $LATEST" >> $GITHUB_STEP_SUMMARY
+              if [[ -n "$REPO" ]]; then
+                echo "- **Repository:** $REPO" >> $GITHUB_STEP_SUMMARY
+              fi
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+          done

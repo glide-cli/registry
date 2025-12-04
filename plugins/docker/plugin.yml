@@ -7,7 +7,6 @@ license: MIT
 
 categories:
   - docker
-  - containers
 
 tags:
   - docker
