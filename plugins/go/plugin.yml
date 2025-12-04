@@ -1,12 +1,9 @@
 name: go
 description: Go project detection with build, test, and module management commands
 author: glide-cli
-homepage: https://github.com/glide-cli/glide
-repository: https://github.com/glide-cli/glide
+homepage: https://github.com/glide-cli/glide-plugin-go
+repository: https://github.com/glide-cli/glide-plugin-go
 license: MIT
-
-# Built-in plugin - ships with Glide core
-type: builtin
 
 categories:
   - languages
@@ -20,5 +17,5 @@ tags:
   - development
 
 # Current versions
-latest: 3.0.0
-stable: 3.0.0
+latest: 2.0.0
+stable: 2.0.0

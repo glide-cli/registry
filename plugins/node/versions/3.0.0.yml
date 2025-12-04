@@ -2,9 +2,14 @@ version: 3.0.0
 releaseDate: 2025-12-01T00:00:00Z
 minGlideVersion: 3.0.0
 
-# Built-in plugin - no separate download required
-type: builtin
-bundledWith: glide@3.0.0
+releaseURL: https://github.com/glide-cli/glide-plugin-node/releases/tag/v3.0.0
+
+checksums:
+  darwin-amd64: sha256:1a0297129e18d4519f28f7f647819056a9dac103d83658940c3dfb291ee49737
+  darwin-arm64: sha256:f15be8c0eaf8962684eb03f9321f5cb7eeebfcf5df093d5f1ade65eb11077627
+  linux-amd64: sha256:d13ad9663713d95568490e171257efbea2a733cdae0dd74e1f33c16042ce528f
+  linux-arm64: sha256:9b2b38a05c45b09b9f0f1a72b29f6c8143c2822805290b90fd5c1dc42e13b8aa
+  windows-amd64: sha256:8633d516382199745c9495fad752f66549908f3f819bb4a3fa4deede6151a546
 
 changelog: |
   ### Features
@@ -14,12 +19,6 @@ changelog: |
   - Workspace/monorepo support
   - TypeScript project detection
   - Auto-import of package.json scripts as commands
-
-  ### Package Manager Support
-  - npm (default)
-  - yarn (detected via yarn.lock)
-  - pnpm (detected via pnpm-lock.yaml)
-  - bun (detected via bun.lockb)
 
 commands:
   - name: install

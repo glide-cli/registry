@@ -1,12 +1,9 @@
 name: node
 description: Node.js project detection with npm, yarn, pnpm, and bun support
 author: glide-cli
-homepage: https://github.com/glide-cli/glide
-repository: https://github.com/glide-cli/glide
+homepage: https://github.com/glide-cli/glide-plugin-node
+repository: https://github.com/glide-cli/glide-plugin-node
 license: MIT
-
-# Built-in plugin - ships with Glide core
-type: builtin
 
 categories:
   - languages

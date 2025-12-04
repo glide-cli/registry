@@ -2,9 +2,14 @@ version: 3.0.0
 releaseDate: 2025-12-01T00:00:00Z
 minGlideVersion: 3.0.0
 
-# Built-in plugin - no separate download required
-type: builtin
-bundledWith: glide@3.0.0
+releaseURL: https://github.com/glide-cli/glide-plugin-php/releases/tag/v3.0.0
+
+checksums:
+  darwin-amd64: sha256:a6f53bdb39a00799497ca7fb918f77c278354f1df59cb11eceab3e2d423ecd54
+  darwin-arm64: sha256:787ff4a39d71ee1b8387e5ad00ca182fdb337f763f82c896b04bac65411fc4ac
+  linux-amd64: sha256:c82565881aabb788777c2bb1e7ae86fba5204556f783f7f428b00533c2a64a8b
+  linux-arm64: sha256:ed4c9cf1e50fc5fca47625712b5ded1708252a4480a99d8a7a32f3f9f0a1388c
+  windows-amd64: sha256:4940349c881b7a037f566bb8469c7b73a1197aaf69509fe46572d0ea086b1cd4
 
 changelog: |
   ### Features

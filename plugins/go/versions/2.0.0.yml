@@ -1,10 +1,15 @@
-version: 3.0.0
+version: 2.0.0
 releaseDate: 2025-12-01T00:00:00Z
 minGlideVersion: 3.0.0
 
-# Built-in plugin - no separate download required
-type: builtin
-bundledWith: glide@3.0.0
+releaseURL: https://github.com/glide-cli/glide-plugin-go/releases/tag/v2.0.0
+
+checksums:
+  darwin-amd64: sha256:15a94ffbda6bce63b98f168bdb3b4ed0fff0f0e550bed690e3a4a2ab7352a994
+  darwin-arm64: sha256:4527741fb91546e8f810cb025f0d7aad855b84ce84e545ec3bdf11ab9f5cb811
+  linux-amd64: sha256:5a48df93ab67f1276e8383ba2c972e210b29ba688ce6eb96e6876f2eb74a31d9
+  linux-arm64: sha256:767127498b22d1e1e66bb728a49908988eff48e1a84d531922566ab59f09ac90
+  windows-amd64: sha256:1720d2089a6e9964cebea0eac1b625913297641f08793768d7b37ee39ac3469d
 
 changelog: |
   ### Features
@@ -12,13 +17,6 @@ changelog: |
   - Go workspace support (go.work)
   - Automatic version detection from go.mod
   - Module name extraction
-
-  ### Commands
-  - Build, test, and run commands
-  - Code formatting (go fmt)
-  - Static analysis (go vet)
-  - Module management (mod:tidy, mod:download, mod:vendor)
-  - Code generation (go generate)
 
 commands:
   - name: build
